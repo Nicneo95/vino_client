@@ -55,7 +55,7 @@ export default function Navbar() {
             {/* right links */}
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <Link to="/" className="nav-link active">
+                <Link to="/account/login" className="nav-link active">
                   Login
                 </Link>
               </li>
