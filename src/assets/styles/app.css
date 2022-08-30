@@ -105,3 +105,17 @@ p.danger {
 .content {
     min-height: 100vh;
 }
+
+.sliderBox {
+    min-height: 80vh;
+}
+
+.carousel-caption {
+    position: absolute !important;
+    right: 0 !important;
+    left: 0 !important;
+    bottom: 40% !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    color: #fff !important;
+}

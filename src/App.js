@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import AboutUs from "./pages/AboutUs";
 import Login from './pages/Login'
 import Register from './pages/Register'
+import UserProvider from "./providers/UserProvider";
 
 import ProductListing from "./pages/ProductListing";
 import Home from "./pages/Home";
@@ -17,6 +18,7 @@ import Annoucement from "./components/Announcement";
 function App() {
   return (
     <React.Fragment>
+      <UserProvider>
       <Router>
         <Annoucement />
         <Navbar />
@@ -29,6 +31,7 @@ function App() {
         </Routes>
         <Footer />
       </Router>
+      </UserProvider>
     </React.Fragment>
   );
 }

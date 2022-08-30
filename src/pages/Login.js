@@ -23,6 +23,7 @@ export default function Login() {
   };
 
   const handleLogin = async () => {
+    console.log(context)
     let loginError = await context.userLogin(
       formState.email,
       formState.password
@@ -41,51 +42,55 @@ export default function Login() {
   };
 
   return (
-    <Container>
-      <h1 className="my-5 text-center">LOGIN</h1>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email</Form.Label>
-        <Form.Control
-          type="email"
-          name="email"
-          value={formState.email}
-          onChange={updateFormField}
-        />
-      </Form.Group>
+    <React.Fragment>
+      <div className="content">
+        <Container>
+          <h1 className="my-5 text-center">LOGIN</h1>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              type="email"
+              name="email"
+              value={formState.email}
+              onChange={updateFormField}
+            />
+          </Form.Group>
 
-      <Form.Group className="mb-5" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control
-          type="password"
-          name="password"
-          value={formState.password}
-          onChange={updateFormField}
-        />
-      </Form.Group>
+          <Form.Group className="mb-5" controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
+              name="password"
+              value={formState.password}
+              onChange={updateFormField}
+            />
+          </Form.Group>
 
-      <p>{loginError}</p>
+          <p>{loginError}</p>
 
-      <Row>
-        <Col xs={12} md={3}>
-          <Button
-            onClick={() => {
-              handleLogin();
-            }}
-          >
-            SIGN IN
-          </Button>
-        </Col>
+          <Row>
+            <Button
+              variant="secondary m-1"
+              style={{ width: "80px" }}
+              onClick={() => {
+                handleLogin();
+              }}
+            >
+              SIGN IN
+            </Button>
 
-        <Col xs={12} md={4}>
-          <Button
-            onClick={() => {
-              handleRegister();
-            }}
-          >
-            CREATE ACCOUNT
-          </Button>
-        </Col>
-      </Row>
-    </Container>
+            <Button
+              variant="secondary m-1"
+              style={{ width: "140px" }}
+              onClick={() => {
+                handleRegister();
+              }}
+            >
+              CREATE ACCOUNT
+            </Button>
+          </Row>
+        </Container>
+      </div>
+    </React.Fragment>
   );
 }
